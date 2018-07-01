@@ -37,7 +37,7 @@ export default class PostTemplate extends React.Component {
                 {postNode.date} in
                 <Link
                   className="cat-link"
-                  to={`catgory/${postNode.categories[0].name}`}
+                  to={`category/${postNode.categories[0].slug}`}
                 >
                   {postNode.categories[0].name}{' '}
                 </Link>
@@ -118,9 +118,11 @@ export const pageQuery = graphql`
       id
       categories {
         name
+        slug
       }
       tags {
         name
+        slug
       }
       content
     }

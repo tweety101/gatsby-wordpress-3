@@ -49,7 +49,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         graphql(
           `
             {
-              allWordpressPost {
+              allWordpressPost(
+                limit: 2000
+              ) {
                 edges {
                   node {
                     id

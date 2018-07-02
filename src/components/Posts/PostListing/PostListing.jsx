@@ -30,7 +30,7 @@ class PostListing extends React.Component {
         {/* Your post list here. */
         postList.map(post => (
           <PostListContainer>
-            <Link className="post-link" to={"../" + post.path} key={post.title}>
+            <Link className="post-link" to={"../" + post.path} key={post.path}>
               {post.featuredImageUrl !== '' ? (
                 <img
                   className="featured-image"

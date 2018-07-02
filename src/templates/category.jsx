@@ -44,7 +44,9 @@ const MainContentContainer = styled.main`
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
   query CategoryPage {
-    allWordpressPost {
+    allWordpressPost(
+      limit:100
+    ) {
       edges {
         node {
           featured_media {

@@ -16,15 +16,6 @@ class Index extends React.Component {
         <TopNavigation pages={this.props.data.allWordpressPage} />
         <MainContentContainer>
           <h1>Gatsby + Wordpress Blog</h1>
-          <p style={{ textAlign: 'center' }}>
-            Created by Eric Windmill.{' '}
-            <a
-              style={{ fontSize: '1.6rem' }}
-              href="https://twitter.com/ericwindmill"
-            >
-              You should follow him on Twitter
-            </a>
-          </p>
           <Divider />
           <PostListing postEdges={postEdges} />
         </MainContentContainer>
@@ -65,7 +56,9 @@ const MainContentContainer = styled.main`
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
   query IndexQuery {
-    allWordpressPost {
+    allWordpressPost(
+      limit: 100
+    )  {
       edges {
         node {
           featured_media {
